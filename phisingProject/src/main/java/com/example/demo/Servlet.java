@@ -29,7 +29,7 @@ public class Servlet extends HttpServlet {
         }
         else {
             System.out.println("Couldn't get the login information");
-            req.getRequestDispatcher("signin.jsp").forward(req, resp);
+            req.getRequestDispatcher("testing.jsp").forward(req, resp);
         }
     }
 

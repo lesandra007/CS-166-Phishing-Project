@@ -17,7 +17,7 @@
                 <div class="mb-3">
                     <label for="email" class="form-label">Password</label>
                     <div id="emailHelp" class="form-text">SJSUOne Password</div>
-                    <input type="text" name="password" class="form-control"">
+                    <input type="text" name="password" class="form-control">
                 </div>
                 <button type="submit" class="btn btn-primary" name="action" value="submit">Submit</button>
             </form>

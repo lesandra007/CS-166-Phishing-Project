@@ -20,7 +20,7 @@ public class Bean {
 
     public String getPassword(){return password;}
 
-    public int store(){
+    public int store() throws SQLException {
         Connection dbConnection = DatabaseConnection.tryConnecting();
 
         if(dbConnection == null){
@@ -28,17 +28,21 @@ public class Bean {
             return 0;
         }
 
-        try{
+        try {
             System.out.println("connected and in query");
-            PreparedStatement statement = dbConnection.prepareStatement(
-                    "INSERT INTO phising.Users (student_id, password) VALUES (?, ?)",
-                    PreparedStatement.RETURN_GENERATED_KEYS
-            );
+//            PreparedStatement statement = dbConnection.prepareStatement(
+//                    "INSERT INTO phishingdatabase.Student (student_id, student_password) VALUES (?, ?)",
+//                    PreparedStatement.RETURN_GENERATED_KEYS
+//            );
+            System.out.println("this.id: " + this.id);
+            System.out.println("this.password: " + this.password);
 
+            PreparedStatement statement = dbConnection.prepareStatement("INSERT INTO phishingdatabase.Student (student_id, student_password) VALUES (?, ?)");
+//            System.out.println("Executing SQL: " + statement.toString());
             System.out.println("got the statement");
 
-            statement.setString(1, getId());
-            statement.setString(2, getPassword());
+            statement.setString(1, this.id);
+            statement.setString(2, this.password);
 
             System.out.println("executing update");
             statement.executeUpdate();
@@ -46,22 +50,22 @@ public class Bean {
             System.out.println("do you continue?");
             // it doesn't continue after the execute update which is odd
 
-            System.out.println("setting result set");
-            ResultSet set = statement.getGeneratedKeys();
-
-            System.out.println("what is set.next(): " + set.next());
-
-            if(set.next()){
-                System.out.println("went into the query");
-                return set.getInt(1);
-            }
-            else {
-                return 0;
-            }
-
+//            System.out.println("setting result set");
+//            ResultSet set = statement.getGeneratedKeys();
+//
+//            System.out.println("what is set.next(): " + set.next());
+//
+//            if(set.next()){
+//                System.out.println("went into the query");
+//                return set.getInt(1);
+//            }
+//            else {
+//                return 0;
+//            }
         }
         catch (SQLException x){
             return 0;
         }
+        return 0;
     }
 }

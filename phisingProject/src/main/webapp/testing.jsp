@@ -151,7 +151,7 @@
     						<div class="siw-main-header"><div></div></div>
     							<!--<div class="siw-main-body"><form method="POST" action="/oauth2/v1/authorize" data-se="o-form" slot="content" id="form20" class="ion-form o-form o-form-edit-mode">-->
 
-    <div class="siw-main-body"><form data-se="o-form" slot="content" id="form20" class="ion-form o-form o-form-edit-mode">
+    <div class="siw-main-body"><form method="POST" data-se="o-form" slot="content" id="form20" class="ion-form o-form o-form-edit-mode">
     								<div data-se="o-form-content" class="o-form-content o-form-theme clearfix" style="height:0.5; width: 316px;">
     									<h2 data-se="o-form-head" class="okta-form-title o-form-head">Sign In</h2>
     									<div class="o-form-info-container"></div>
@@ -188,7 +188,10 @@
 
     <div class="o-form-button-bar">
 
+        <input type="hidden" name="method" value="POST">
+
     <input class="button button-primary" type="submit" value="Sign in" data-type="save"></div>
+<%--        <button type="submit" class="btn btn-primary" name="action" value="submit">Submit</button></div>--%>
     </form>
 
     <script> function myFunction2(y){

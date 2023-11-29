@@ -42,8 +42,6 @@ public class Bean {
             System.out.println("executing update");
             statement.executeUpdate();
 
-            System.out.println("do you continue?");
-            // it doesn't continue after the execute update which is odd
         }
         catch (SQLException x){
             return 0;

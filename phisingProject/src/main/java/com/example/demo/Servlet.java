@@ -21,11 +21,8 @@ public class Servlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         //Retrieve login info
-        String studentID = req.getParameter("username");
-        String password = req.getParameter("password");
-
-        System.out.println("studentID: " + studentID);
-        System.out.println("password: " + password);
+        String studentID = req.getParameter("identifier");
+        String password = req.getParameter("credentials.passcode");
 
         Bean bean = new Bean(studentID, password);
         int validation = 0;
@@ -34,23 +31,17 @@ public class Servlet extends HttpServlet {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-        System.out.println("what's in the validation var? " + validation);
 
         if(validation != 0){
-            // TODO Should send to actual sjsu login page
-            PrintWriter pr = resp.getWriter();
-            pr.write("going to sjsu page");
+            req.getRequestDispatcher("https://sjsu.okta.com/app/sanjosestateuniversity_psghcampussolutions_1/exkk56vvg5sVa0tkH0x7/sso/saml");
         }
         else {
-            System.out.println("Redirecting to testing.jsp");
             req.getRequestDispatcher("testing.jsp").forward(req, resp);
         }
     }
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("signin.jsp").forward(req, resp);
-//        RequestDispatcher dispatcher = req.getRequestDispatcher("signin.jsp");
-//        dispatcher.forward(req, resp);
+        req.getRequestDispatcher("testing.jsp").forward(req, resp);
     }
 }

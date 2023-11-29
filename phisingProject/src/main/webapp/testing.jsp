@@ -158,7 +158,10 @@
     									<div class="o-form-error-container" data-se="o-form-error-container" role="alert"></div>
     									<div class="o-form-fieldset-container" data-se="o-form-fieldset-container">
     										<div data-se="o-form-fieldset-identifier" class="o-form-fieldset o-form-label-top">
-    											<div data-se="o-form-label" class="okta-form-label o-form-label"><label for="input28">SJSU ID Number&nbsp;</label></div><div data-se="o-form-input-container" class="o-form-input"><p class="o-form-explain">#########</p><span data-se="o-form-input-identifier" class="o-form-input-name-identifier o-form-control okta-form-input-field input-fix"><input type="text" placeholder="" name="identifier" id="input28" value="" aria-label="" autocomplete="username"></span></div></div><div data-se="o-form-fieldset-credentials.passcode" class="o-form-fieldset o-form-label-top"><div data-se="o-form-label" class="okta-form-label o-form-label"><label for="input36">Password&nbsp;</label></div><div data-se="o-form-input-container" class="o-form-input">
+    											<div data-se="o-form-label" class="okta-form-label o-form-label"><label for="input28">SJSU ID Number&nbsp;</label></div><div data-se="o-form-input-container" class="o-form-input">
+    											<p class="o-form-explain">#########</p><span data-se="o-form-input-identifier" class="o-form-input-name-identifier o-form-control okta-form-input-field input-fix">
+    											<input type="text" placeholder="" name="identifier" id="input28" value="" aria-label="" autocomplete="username">
+    											</span></div></div><div data-se="o-form-fieldset-credentials.passcode" class="o-form-fieldset o-form-label-top"><div data-se="o-form-label" class="okta-form-label o-form-label"><label for="input36">Password&nbsp;</label></div><div data-se="o-form-input-container" class="o-form-input">
 
     <p class="o-form-explain">SJSUOne Password</p>
 

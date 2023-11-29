@@ -23,17 +23,5 @@ public class DatabaseConnection {
         }
 
         return connection;
-
-
-
-//        try{
-//            //Class.forName("com.mysql.jdbc.Driver");
-//            String url = "jdbc:mysql://" + "localhost" +":" + "3306" + "/" + "PhishingDatabase";
-//
-//            return DriverManager.getConnection(url, "root", "password");
-//        }
-//        catch(Exception e) {
-//            return null;
-//        }
     }
 }
